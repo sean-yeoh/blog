@@ -12,6 +12,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/topbar" %>
+    <div class="off-canvas position-left" id="offCanvas" data-off-canvas data-transition="overlap">
+      <ul class="vertical menu">
+        <li>
+          <a class="text-right close-menu-button" aria-label="Close menu" data-close>
+            <span aria-hidden="true">&times;</span>
+          </a>
+        </li>
+        <li><a href="#">One</a></li>
+        <li><a href="#">Two</a></li>
+        <li><a href="#">Three</a></li>
+        <li><a href="#">Four</a></li>
+      </ul>
+    </div>
+    <div class="off-canvas-content" data-off-canvas-content>
+      <%= yield %>
+    </div>
   </body>
 </html>
