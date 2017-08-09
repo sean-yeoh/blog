@@ -1,6 +1,5 @@
 <%= simple_form_for @post do |f| %>
   <%= f.input :title %>
-  <%= label_tag "Content" %>
-  <%= f.cktext_area :content %>
+  <%= f.input :content, as: :ckeditor %>
   <%= f.button :submit %>
 <% end %>
