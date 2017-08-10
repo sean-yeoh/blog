@@ -17,7 +17,11 @@
       <%= render "layouts/offcanvas_menu" %>
     </div>
     <div class="off-canvas-content" data-off-canvas-content>
-      <%= yield %>
+      <div class="grid-x grid-padding-x">
+        <div class="medium-10 large-8 cell">
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
 </html>
