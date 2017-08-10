@@ -3,11 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post {
-  margin: $global-margin $global-margin $global-margin * 2;
+  margin: $global-margin 0 $global-margin * 2;
   background-color: $white;
   padding: $global-padding;
-  border: 1px solid #bacdf0;
+  border: 1px solid #d1d1d1;
   hr {
-    border-bottom: 1px solid #bacdf0;
+    border-bottom: 1px solid #d1d1d1;
   }
 }

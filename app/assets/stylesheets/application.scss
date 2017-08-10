@@ -16,3 +16,9 @@
 @import "font-awesome";
 @import "layouts";
 @import "posts";
+
+.container {
+  @extend .medium-10;
+  @extend .large-8;
+  @extend .cell;
+}
