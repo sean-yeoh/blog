@@ -1,5 +1,10 @@
-<div class="top-bar">
-  <div class="row column">
-    <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
+<header>
+  <div class="grid-x align-center">
+    <div class="container text-center">
+      <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
+      <%= link_to root_path do %>
+        <%= image_tag "logo.png", class: "topbar-logo" %>
+      <% end %>
+    </div>
   </div>
-</div>
+</header>

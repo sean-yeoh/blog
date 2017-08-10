@@ -13,3 +13,13 @@ footer {
     color: $white;
   }
 }
+
+.topbar-logo {
+  max-height: 5vh;
+}
+
+header {
+  background-color: $tiffany-blue;
+  color: $black;
+  padding: $global-padding * 0.5;
+}
