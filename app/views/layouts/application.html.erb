@@ -18,13 +18,11 @@
     </div>
     <div class="off-canvas-content" data-off-canvas-content>
       <div class="grid-x grid-padding-x align-center">
-        <div class="medium-10 large-8 cell">
+        <div class="container">
           <%= yield %>
         </div>
       </div>
     </div>
-    <footer data-sticky-container>
-        hello im a footer
-    </footer>
+    <%= render "layouts/footer" %>
   </body>
 </html>
