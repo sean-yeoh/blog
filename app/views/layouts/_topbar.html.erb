@@ -1,10 +1,18 @@
 <header>
-  <div class="grid-x align-center">
-    <div class="container text-center">
-      <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
-      <%= link_to root_path do %>
-        <%= image_tag "logo.png", class: "topbar-logo" %>
-      <% end %>
+  <div class="grid-x grid-padding-x align-center">
+    <div class="container">
+      <div class="grid-x align-middle">
+        <div class="small-4 cell">
+          <button type="button" data-toggle="offCanvas">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="small-4 cell text-center">
+          <%= link_to root_path do %>
+            <%= image_tag "logo.png", class: "topbar-logo" %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </header>
