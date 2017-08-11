@@ -26,9 +26,16 @@ class PostsController < ApplicationController
   end
 
   def update
+    if @post.update(post_params)
+      redirect_to @post, notice: "Post was successfully updated."
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @post.destroy
+    redirect_to posts_path, notice: "Post was successfully deleted."
   end
 
   private
