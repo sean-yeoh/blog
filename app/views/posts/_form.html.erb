@@ -1,5 +1,9 @@
-<%= simple_form_for @post do |f| %>
+<%= simple_form_for @post, html: { class: "post-form" } do |f| %>
   <%= f.input :title %>
   <%= f.input :content, as: :ckeditor %>
-  <%= f.button :submit %>
+  <div class="grid-x align-center">
+    <div class="cell small-6">
+      <%= f.button :submit, class: "expanded success" %>
+    </div>
+  </div>
 <% end %>
