@@ -12,4 +12,12 @@ class Post < ApplicationRecord
   def should_generate_new_friendly_id?
     title_changed?
   end
+
+  def previous
+    Post.where(["id < ?", id]).first
+  end
+
+  def next
+    Post.where(["id > ?", id]).last
+  end
 end
