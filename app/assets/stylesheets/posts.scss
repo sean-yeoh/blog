@@ -6,8 +6,18 @@
   margin: $global-margin 0 $global-margin * 2;
   background-color: $white;
   padding: $global-padding;
-  border: 1px solid #d1d1d1;
-  hr {
-    border-bottom: 1px solid #d1d1d1;
+  border: 1px solid $gray;
+}
+
+.archives {
+  &-header {
+    margin-top: $global-margin;
+  }
+  a {
+    color: $black;
+    padding: 1.25rem 0;
+  }
+  &-post {
+    color: $primary-color !important;
   }
 }

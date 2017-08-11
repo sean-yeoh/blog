@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
     @posts = Post.all
+    @years = @posts.map {|post| post.created_at.year}.uniq
+    @posts_archive = @posts.group_by {|post| [post.created_at.year, post.created_at.month]}
   end
 
   def new
