@@ -25,10 +25,10 @@
 
 .actions {
   .first {
-    padding-right: $global-padding;
+    margin-right: $global-margin;
   }
   .last {
-    padding-left: $global-padding;
+    margin-left: $global-margin;
   }
   .edit-link {
     color: $warning-color;
@@ -36,4 +36,9 @@
   .delete-link {
     color: $alert-color;
   }
+}
+
+small.error {
+  color: $alert-color;
+  font-weight: $global-weight-bold;
 }

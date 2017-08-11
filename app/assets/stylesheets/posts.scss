@@ -18,3 +18,12 @@
     color: $primary-color !important;
   }
 }
+
+.post-form {
+  input[name="post[title]"] {
+    margin: 0;
+  }
+  .post_content, input[type=submit] {
+    margin-top: $global-margin;
+  }
+}
