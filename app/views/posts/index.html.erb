@@ -14,15 +14,15 @@
     <ul class="vertical menu accordion-menu" data-accordion-menu>
       <% @years.each do |year| %>
         <li>
-          <a class="archives-year" href="#"><%= year %></a>
+          <%= link_to year, "#" %>
           <ul class="menu vertical nested">
             <% @posts_archive.each do |yr_month, post_arr| %>
               <% if yr_month.first == year %>
                 <li>
-                  <%= link_to I18n.t("date.abbr_month_names")[yr_month.last], "#", class: "archives-month" %>
+                  <%= link_to I18n.t("date.abbr_month_names")[yr_month.last], "#" %>
                   <ul class="menu vertical nested">
                     <% post_arr.each do |post| %>
-                      <li><%= link_to "#{post.created_at.day} - #{post.title}", post_path(post), class: "archives-post" %></li>
+                      <li><%= link_to "#{post.created_at.day} - #{post.title}", post_path(post), class: "archives-post-link" %></li>
                     <% end %>
                   </ul>
                 </li>
