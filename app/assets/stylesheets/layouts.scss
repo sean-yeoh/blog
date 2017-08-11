@@ -8,7 +8,8 @@
 footer {
   background-color: #4265A5;
   color: $white;
-  padding: $global-padding;
+  padding-top: $global-padding;
+  padding-bottom: $global-padding;
   a {
     color: $white;
   }
@@ -21,5 +22,6 @@ footer {
 header {
   background-color: $tiffany-blue;
   color: $black;
-  padding: $global-padding * 0.5;
+  padding-top: $global-padding * 0.5;
+  padding-bottom: $global-padding * 0.5;
 }
