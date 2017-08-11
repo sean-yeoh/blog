@@ -22,3 +22,18 @@
   @extend .large-8;
   @extend .cell;
 }
+
+.actions {
+  .first {
+    padding-right: $global-padding;
+  }
+  .last {
+    padding-left: $global-padding;
+  }
+  .edit-link {
+    color: $warning-color;
+  }
+  .delete-link {
+    color: $alert-color;
+  }
+}
