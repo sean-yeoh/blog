@@ -4,9 +4,9 @@ class Post < ApplicationRecord
   validates :content, presence: { message: "Content can't be empty." }
   default_scope { order(id: :desc) }
   extend FriendlyId
-  friendly_id :yyyy_mm_dd_and_title, use: :slugged
+  friendly_id :date_and_title, use: :slugged
 
-  def yyyy_mm_dd_and_title
+  def date_and_title
     if created_at && title
       "#{created_at.strftime("%Y %m %d")} #{title}"
     end
