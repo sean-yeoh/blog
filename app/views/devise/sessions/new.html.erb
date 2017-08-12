@@ -1,5 +1,5 @@
-<div class="grid-x align-center">
-  <div class="cell medium-10 large-8 login-form">
+<div class="grid-x align-center login-form">
+  <div class="cell medium-10 large-8">
     <h2>Log in</h2>
     <%= simple_form_for resource, url: session_path(resource_name) do |f| %>
       <%= f.input :email, input_html: { autofocus: true } %>
