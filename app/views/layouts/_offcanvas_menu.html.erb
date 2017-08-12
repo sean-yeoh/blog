@@ -5,5 +5,10 @@
     </a>
   </li>
   <li><%= link_to "Home", root_path %></li>
-  <li><%= link_to "New Post", new_post_path %></li>
+  <% if admin_signed_in? %>
+    <li><%= link_to "New Post", new_post_path %></li>
+    <li><%= link_to "Log Out", destroy_admin_session_path, method: :delete %></li>
+  <% else %>
+    <li><%= link_to "Log In", new_admin_session_path %></li>
+  <% end %>
 </ul>
