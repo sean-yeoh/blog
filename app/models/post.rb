@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :admin, optional: true
+  belongs_to :admin
   validates :title, presence: { message: "Title can't be empty." }
   validates :content, presence: { message: "Content can't be empty." }
   default_scope { order(id: :desc) }
