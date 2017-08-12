@@ -3,7 +3,7 @@
     <% @posts.each do |post| %>
       <div class="post">
         <h2><%= link_to post.title, post_path(post) %></h2>
-        <p class="subheader">Posted on <%= post.created_at.strftime("%A, %d %b %Y") %> by <%= post.admin&.name %></p>
+        <p class="subheader">Posted on <%= post.created_at.strftime("%A, %d %b %Y") %> by <%= post.admin.name %></p>
         <hr>
         <%= post.content.html_safe %>
       </div>
