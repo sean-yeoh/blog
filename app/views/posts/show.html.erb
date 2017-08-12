@@ -13,16 +13,18 @@
       </div>
     </div>
   </div>
-  <div class="shrink cell">
-    <div class="actions">
-      <%= link_to edit_post_path(@post), class: "edit-link first" do %>
-        <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
-      <% end %>
-      <%= link_to @post, method: :delete, class: "delete-link last", data: { confirm: 'Are you sure?'}  do %>
-        <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
-      <% end %>
+  <% if admin_signed_in? %>
+    <div class="shrink cell">
+      <div class="actions">
+        <%= link_to edit_post_path(@post), class: "edit-link first" do %>
+          <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to @post, method: :delete, class: "delete-link last", data: { confirm: 'Are you sure?'}  do %>
+          <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
 
 <div class="grid-x align-middle">
