@@ -43,3 +43,10 @@ small.error {
   color: $alert-color;
   font-weight: $global-weight-bold;
 }
+
+.flash {
+  font-weight: $global-weight-bold;
+}
+.callout.notice {
+  @extend .success;
+}
