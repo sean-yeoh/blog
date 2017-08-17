@@ -7,8 +7,9 @@ class Post < ApplicationRecord
   friendly_id :date_and_title, use: :slugged
 
   def date_and_title
-    if created_at && title
-      "#{created_at.strftime("%Y %m %d")} #{title}"
+    date = created_at ? created_at.strftime("%Y %m %d") : Time.now.strftime("%Y %m %d")
+    if title
+        "#{date} #{title}"
     end
   end
 
