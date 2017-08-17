@@ -15,14 +15,16 @@ footer {
   }
 }
 
-.topbar-logo {
-  max-height: 5vh;
-}
-
 header {
   background-color: $tiffany-blue;
   color: $black;
   padding-top: $global-padding * 0.5;
   padding-bottom: $global-padding * 0.5;
   margin-bottom: $global-margin;
+  img {
+    max-height: 5vh;
+  }
+  button {
+    cursor: pointer;
+  }
 }
