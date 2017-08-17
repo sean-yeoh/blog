@@ -57,7 +57,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'foundation-rails'
 gem 'jquery-rails'
 gem 'devise'
-gem 'ckeditor', github: 'galetahub/ckeditor'
+# gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'simple_form'
@@ -65,3 +65,4 @@ gem "font-awesome-rails"
 gem 'friendly_id'
 gem 'cloudinary'
 gem "figaro"
+gem "ckeditor", github: 'sean-yeoh/ckeditor'
