@@ -1,0 +1,24 @@
+require 'test_helper'
+
+class TodosControllerTest < ActionDispatch::IntegrationTest
+  test "should get index" do
+    get todos_index_url
+    assert_response :success
+  end
+
+  test "should get new" do
+    get todos_new_url
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get todos_edit_url
+    assert_response :success
+  end
+
+  test "should get _form" do
+    get todos__form_url
+    assert_response :success
+  end
+
+end
