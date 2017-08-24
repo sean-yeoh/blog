@@ -5,26 +5,6 @@
   }
 }
 
-footer {
-  background-color: #4265A5;
-  color: $white;
-  padding-top: $global-padding;
-  padding-bottom: $global-padding;
-  a {
-    color: $white;
-  }
-}
-
-header {
-  background-color: $tiffany-blue;
-  color: $black;
-  padding-top: $global-padding * 0.5;
-  padding-bottom: $global-padding * 0.5;
-  margin-bottom: $global-margin;
-  img {
-    max-height: 5vh;
-  }
-  button {
-    cursor: pointer;
-  }
+.off-canvas-content {
+  margin-top: $global-margin;
 }
