@@ -12,20 +12,23 @@
   </head>
 
   <body>
+
     <%= render "layouts/topbar" %>
+    <main>
+      <div class="off-canvas-content" data-off-canvas-content>
+        <div class="grid-x grid-padding-x align-center">
+          <div class="container">
+            <% flash.each do |key, msg| %>
+              <div class="callout flash <%= key %>"><%= msg %></div>
+            <% end %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%= render "layouts/footer" %>
     <div class="off-canvas position-left" id="offCanvas" data-off-canvas data-transition="overlap">
       <%= render "layouts/offcanvas_menu" %>
     </div>
-    <div class="off-canvas-content" data-off-canvas-content>
-      <div class="grid-x grid-padding-x align-center">
-        <div class="container">
-          <% flash.each do |key, msg| %>
-            <div class="callout flash <%= key %>"><%= msg %></div>
-          <% end %>
-          <%= yield %>
-        </div>
-      </div>
-    </div>
-    <%= render "layouts/footer" %>
   </body>
 </html>
