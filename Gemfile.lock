@@ -1,6 +1,5 @@
-GIT
-  remote: https://github.com/sean-yeoh/ckeditor.git
-  revision: 592247a0e815a211e6357ed596042088ee511207
+PATH
+  remote: /home/sean/personal/ckeditor
   specs:
     ckeditor (4.2.4)
       cocaine
@@ -269,4 +268,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.3
+   1.15.4

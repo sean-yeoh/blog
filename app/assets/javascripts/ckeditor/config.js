@@ -32,4 +32,5 @@ CKEDITOR.editorConfig = function( config )
   config.toolbar = [
     { name: 'menu-bar', items: ['Source', '-', 'Link', 'Unlink', 'Image', 'Table', 'HorizontalRule', 'NumberedList', 'BulletedList', 'Outdent', 'Indent', 'Blockquote', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', 'Font', 'FontSize', 'TextColor', 'BGColor', '-', 'RemoveFormat' ] }
   ];
+  config.extraPlugins = 'image2,widget,widgetselection,lineutils';
 };

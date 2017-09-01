@@ -65,4 +65,5 @@ gem "font-awesome-rails"
 gem 'friendly_id'
 gem 'cloudinary'
 gem "figaro"
-gem "ckeditor", github: 'sean-yeoh/ckeditor'
+# gem "ckeditor", github: 'sean-yeoh/ckeditor'
+gem "ckeditor", path: '/home/sean/personal/ckeditor'

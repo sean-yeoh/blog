@@ -15,6 +15,11 @@
 //= require jquery_ujs
 //= require foundation
 //= require ckeditor/init
+//= require ckeditor/plugins/widget/plugin
+//= require ckeditor/plugins/widgetselection/plugin
+//= require ckeditor/plugins/lineutils/plugin
+//= require ckeditor/plugins/image2/plugin
+//= require ckeditor/config
 //= require turbolinks
 //= require_tree .
 
