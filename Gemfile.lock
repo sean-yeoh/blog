@@ -1,5 +1,6 @@
-PATH
-  remote: /home/sean/personal/ckeditor
+GIT
+  remote: https://github.com/sean-yeoh/ckeditor.git
+  revision: a00795ff97b5d74e5fed31124f207662cec206ba
   specs:
     ckeditor (4.2.4)
       cocaine
