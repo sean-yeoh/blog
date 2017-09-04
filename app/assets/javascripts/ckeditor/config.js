@@ -28,6 +28,10 @@ CKEDITOR.editorConfig = function( config )
 
   config.allowedContent = true;
 
+  // For image 2 plugin
+  config.image2_disableResizer = true;
+  config.image2_prefillDimensions = false;
+
   // Toolbar groups configuration.
   config.toolbar = [
     { name: 'menu-bar', items: ['Source', '-', 'Link', 'Unlink', 'Image', 'Table', 'HorizontalRule', 'NumberedList', 'BulletedList', 'Outdent', 'Indent', 'Blockquote', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', 'Font', 'FontSize', 'TextColor', 'BGColor', '-', 'RemoveFormat' ] }
