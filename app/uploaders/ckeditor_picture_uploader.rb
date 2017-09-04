@@ -31,7 +31,6 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
 
   process :auto_orient
   process :extract_dimensions
-  process resize_to_limit: [300, 300]
 
   # Create different versions of your uploaded files:
   version :thumb do
@@ -39,7 +38,7 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   end
 
   version :content do
-    process resize_to_limit: [300, 300]
+    process resize_to_limit: [800, 800]
   end
 
   def auto_orient
