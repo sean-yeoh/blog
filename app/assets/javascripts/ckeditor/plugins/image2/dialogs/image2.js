@@ -338,7 +338,6 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 
 	function toggleDimensions( enable ) {
 		var method = enable ? 'enable' : 'disable';
-
 		widthField[ method ]();
 		heightField[ method ]();
 	}
@@ -434,60 +433,6 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 							widget.setData( 'alt', this.getValue() );
 						},
 						validate: editor.config.image2_altRequired === true ? CKEDITOR.dialog.validate.notEmpty( lang.altMissing ) : null
-					},
-					{
-						type: 'hbox',
-						widths: [ '25%', '25%', '50%' ],
-						requiredContent: features.dimension.requiredContent,
-						children: [
-							{
-								type: 'text',
-								width: '45px',
-								id: 'width',
-								label: commonLang.width,
-								validate: validateDimension,
-								onKeyUp: onChangeDimension,
-								onLoad: function() {
-									widthField = this;
-								},
-								setup: function( widget ) {
-									this.setValue( widget.data.width );
-								},
-								commit: function( widget ) {
-									widget.setData( 'width', this.getValue() );
-								}
-							},
-							{
-								type: 'text',
-								id: 'height',
-								width: '45px',
-								label: commonLang.height,
-								validate: validateDimension,
-								onKeyUp: onChangeDimension,
-								onLoad: function() {
-									heightField = this;
-								},
-								setup: function( widget ) {
-									this.setValue( widget.data.height );
-								},
-								commit: function( widget ) {
-									widget.setData( 'height', this.getValue() );
-								}
-							},
-							{
-								id: 'lock',
-								type: 'html',
-								style: lockResetStyle,
-								onLoad: onLoadLockReset,
-								setup: function( widget ) {
-									toggleLockRatio( widget.data.lock );
-								},
-								commit: function( widget ) {
-									widget.setData( 'lock', lockRatio );
-								},
-								html: lockResetHtml
-							}
-						]
 					},
 					{
 						type: 'hbox',

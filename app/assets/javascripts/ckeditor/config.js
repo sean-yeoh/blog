@@ -31,6 +31,7 @@ CKEDITOR.editorConfig = function( config )
   // For image 2 plugin
   config.image2_disableResizer = true;
   config.image2_prefillDimensions = false;
+  config.image2_toggleDimensions = false;
 
   // Toolbar groups configuration.
   config.toolbar = [
