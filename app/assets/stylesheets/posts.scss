@@ -35,3 +35,27 @@
 .post-content {
   margin-bottom: $global-margin * 2;
 }
+
+h2 {
+  .emoji {
+    height: 50px;
+  }
+}
+p {
+.emoji {
+  height: 25px;
+  }
+}
+
+@media screen and (max-width: 39.9375em) {
+  h2 {
+  .emoji {
+    height: 32px;
+  }
+  }
+  p {
+  .emoji {
+    height: 25px;
+    }
+  }
+}

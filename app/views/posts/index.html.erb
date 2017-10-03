@@ -2,10 +2,10 @@
   <div class="cell large-8 small-order-2 large-order-1">
     <% @posts.each do |post| %>
       <div class="post">
-        <h2><%= link_to post.title, post_path(post) %></h2>
+        <h2><%= link_to Gemojione.replace_unicode_moji_with_images(post.title), post_path(post) %></h2>
         <p class="subheader">Posted on <%= post.created_at.strftime("%A, %d %b %Y") %> by <%= post.admin.name %></p>
         <hr>
-        <%= post.content.html_safe %>
+        <%= Gemojione.replace_unicode_moji_with_images(post.content.html_safe) %>
       </div>
     <% end %>
   </div>

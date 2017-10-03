@@ -67,3 +67,4 @@ gem 'cloudinary'
 gem "figaro"
 gem "ckeditor", github: 'sean-yeoh/ckeditor'
 # gem "ckeditor", path: '/home/sean/personal/ckeditor'
+gem 'gemojione'

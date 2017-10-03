@@ -8,7 +8,7 @@
       </div>
       <div class="auto cell">
         <h2 class="post-title">
-          <%= @post.title %>
+          <%= Gemojione.replace_unicode_moji_with_images(@post.title) %>
         </h2>
       </div>
     </div>
@@ -51,5 +51,5 @@
 <hr>
 
 <div class="post-content">
-  <%= @post.content.html_safe %>
+  <%= Gemojione.replace_unicode_moji_with_images(@post.content.html_safe) %>
 </div>
