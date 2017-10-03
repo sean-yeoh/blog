@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/sean-yeoh/gemojione.git
-  revision: f4d54400234858c0e2ee49aba5a51aee2e9e16e6
+  revision: f525bc38fe0b6b8eeb4b01db8efdab7bd9aec395
   specs:
     gemojione (3.3.0)
       json
