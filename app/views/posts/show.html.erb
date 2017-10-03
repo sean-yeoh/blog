@@ -14,7 +14,7 @@
     </div>
   </div>
   <% if admin_signed_in? %>
-    <div class="shrink cell">
+    <div class="shrink cell show-for-medium">
       <div class="actions">
         <%= link_to edit_post_path(@post), class: "edit-link first" do %>
           <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
@@ -31,21 +31,45 @@
   <div class="auto cell">
     <p class="subheader">Posted on <%= @post.created_at.strftime("%A, %d %b %Y") %> by <%= @post.admin.name %></p>
   </div>
-  <div class="shrink cell">
-    <div class="actions">
-      <% if @post.previous.nil? %>
-        Prev
-      <% else %>
-        <%= link_to "Prev", @post.previous %>
+  <div class="shrink cell show-for-medium">
+    <% if @post.previous.nil? %>
+      Prev
+    <% else %>
+      <%= link_to "Prev", @post.previous %>
+    <% end %>
+    |
+    <% if @post.next.nil? %>
+      Next
+    <% else %>
+      <%= link_to "Next", @post.next %>
+    <% end %>
+  </div>
+</div>
+
+<div class="show-for-small-only grid-x align-middle">
+  <div class="small-6 cell text-left">
+    <% if @post.previous.nil? %>
+      Prev
+    <% else %>
+      <%= link_to "Prev", @post.previous %>
+    <% end %>
+    |
+    <% if @post.next.nil? %>
+      Next
+    <% else %>
+      <%= link_to "Next", @post.next %>
+    <% end %>
+  </div>
+  <% if admin_signed_in? %>
+    <div class="actions small-6 cell text-right">
+      <%= link_to edit_post_path(@post), class: "edit-link first" do %>
+        <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
       <% end %>
-      |
-      <% if @post.next.nil? %>
-        Next
-      <% else %>
-        <%= link_to "Next", @post.next %>
+      <%= link_to @post, method: :delete, class: "delete-link last", data: { confirm: 'Are you sure?'}  do %>
+        <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
       <% end %>
     </div>
-  </div>
+  <% end %>
 </div>
 
 <hr>
