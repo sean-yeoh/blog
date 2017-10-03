@@ -6,6 +6,13 @@ GIT
       cocaine
       orm_adapter (~> 0.5.0)
 
+GIT
+  remote: https://github.com/sean-yeoh/gemojione.git
+  revision: f4d54400234858c0e2ee49aba5a51aee2e9e16e6
+  specs:
+    gemojione (3.3.0)
+      json
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -106,8 +113,6 @@ GEM
       sprockets-es6 (>= 0.9.0)
     friendly_id (5.2.1)
       activerecord (>= 4.0.0)
-    gemojione (3.3.0)
-      json
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     http-cookie (1.0.3)
@@ -254,7 +259,7 @@ DEPENDENCIES
   font-awesome-rails
   foundation-rails
   friendly_id
-  gemojione
+  gemojione!
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
