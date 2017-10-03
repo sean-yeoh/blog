@@ -1,3 +1,4 @@
 link_to_done = "<a title='Done' class='done-link' data-remote='true' rel='nofollow' data-method='patch' href='/todos/<%= @todo.id %>/done''> <i class='fa fa-check' aria-hidden='true'></i></a>"
+delete_link = "<a class='float-right delete-link' rel='nofollow' data-method='delete' href='/todos/<%= @todo.id %>'><i class='fa fa-trash fa-lg' aria-hidden='true'></i></a>"
 $("#todo-<%= @todo.id%>").remove()
-$(".pending-todos").append("<li id='todo-<%= @todo.id %>'>" + link_to_done + " <%= @todo.description %></li>")
+$(".pending-todos").append("<li id='todo-<%= @todo.id %>'>" + link_to_done + " <span class='description'><%= @todo.description %></span>" + delete_link + "</li>")

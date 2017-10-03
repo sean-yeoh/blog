@@ -8,13 +8,22 @@
 	li {
 		font-size: 1.2rem;
 		margin-left: -$global-margin;
+		.done-link {
+			color: $success-color;
+		}
+		.undo-link {
+			color: $secondary-color;
+		}
+		.delete-link {
+			color: $alert-color;
+		}
+
 	}
 }
 
-.done-link {
-	color: $success-color;
-}
-
-.undo-link {
-	color: $alert-color;
+.completed-todos {
+	.description {
+		color: $dark-gray;
+		text-decoration: line-through;	
+	}
 }

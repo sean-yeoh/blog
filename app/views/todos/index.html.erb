@@ -13,7 +13,10 @@
 			<%= link_to [:done, todo], method: :patch, remote: true, title: "Done", class: "done-link" do %>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			<% end %>
-			<%= todo.description %>
+			<span class="description"><%= todo.description %></span>
+			<%= link_to [todo], method: :delete, class: "float-right delete-link" do %>
+			 	<i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+			<% end %>
 		</li>
 	<% end %>
 </ul>
@@ -25,9 +28,12 @@
 	<% @completed_todos.each do |todo| %>
 		<li id="todo-<%= todo.id%>">
 			<%= link_to [:undo, todo], method: :patch, remote: true, title: "Undo", class: "undo-link" do %>
-				<i class="fa fa-times" aria-hidden="true"></i>
+				<i class="fa fa-undo" aria-hidden="true"></i>
 			<% end %>
-			<%= todo.description %>
+			<span class="description"><%= todo.description %></span>
+			<%= link_to [todo], method: :delete, class: "float-right delete-link" do %>
+			 	<i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+			<% end %>
 		</li>
 	<% end %>
 </ul>

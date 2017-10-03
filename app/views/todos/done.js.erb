@@ -1,3 +1,4 @@
-link_to_undo = "<a title='Undo' class='undo-link' data-remote='true' rel='nofollow' data-method='patch' href='/todos/<%= @todo.id %>/undo''> <i class='fa fa-times' aria-hidden='true'></i></a>"
+link_to_undo = "<a title='Undo' class='undo-link' data-remote='true' rel='nofollow' data-method='patch' href='/todos/<%= @todo.id %>/undo''> <i class='fa fa-undo' aria-hidden='true'></i></a>"
+delete_link = "<a class='float-right delete-link' rel='nofollow' data-method='delete' href='/todos/<%= @todo.id %>'><i class='fa fa-trash fa-lg' aria-hidden='true'></i></a>"
 $("#todo-<%= @todo.id%>").remove()
-$(".completed-todos").append("<li id='todo-<%= @todo.id %>'>" + link_to_undo + " <%= @todo.description %></li>")
+$(".completed-todos").append("<li id='todo-<%= @todo.id %>'>" + link_to_undo + " <span class='description'><%= @todo.description %></span>" + delete_link + "</li>")
