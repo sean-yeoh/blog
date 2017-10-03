@@ -1,9 +1,10 @@
 class TodosController < ApplicationController
-  before_action :set_todo, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!
+  before_action :set_todo, only: [:show, :edit, :update, :destroy, :done, :undo]
 
   def index
-    @todos = Todo.all
+    @todos = Todo.pending
+    @completed_todos = Todo.completed
   end
 
   def new
@@ -13,7 +14,7 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new(todo_params)
     if @todo.save
-      redirect_to todos_path, notice: "Todo was successfully created."
+      redirect_to todos_path, notice: "To do was successfully created."
     else
       render :new
     end
@@ -27,7 +28,7 @@ class TodosController < ApplicationController
 
   def update
     if @todo.update(todo_params)
-      redirect_to todos_path, notice: "Todo was successfully updated."
+      redirect_to todos_path, notice: "To do was successfully updated."
     else
       render :edit
     end
@@ -35,7 +36,21 @@ class TodosController < ApplicationController
 
   def destroy
     @todo.destroy
-    redirect_to todos_path, notice: "Todo was successfully deleted."
+    redirect_to todos_path, notice: "To do was successfully deleted."
+  end
+
+  def done
+    @todo.update(done: true)
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def undo
+    @todo.update(done: false)
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
@@ -44,6 +59,6 @@ class TodosController < ApplicationController
   end
 
   def todo_params
-    params.require(:todo).permit(:item, :done)
+    params.require(:todo).permit(:description, :done)
   end
 end

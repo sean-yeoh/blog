@@ -1,3 +1,5 @@
 class Todo < ApplicationRecord
-  validates :item, presence: true
+  validates :description, presence: true
+  scope :pending, -> { where(done: false) }
+  scope :completed, -> { where(done: true) }
 end
