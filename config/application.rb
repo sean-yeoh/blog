@@ -18,7 +18,5 @@ module Blog
     config.assets.precompile += Ckeditor.assets
     config.assets.precompile += %w( ckeditor/* )
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
-    config.assets.paths << Gemojione.images_path
-    config.assets.precompile << "emoji/*.png"
   end
 end
