@@ -24,11 +24,12 @@
 //= require_tree .
 
 $(document).on("turbolinks:load", function() {
-  $(document).foundation();
-
+  $(function(){
+    $(document).foundation();
+  })
+  
   $("textarea#descriptions").bind("change keypress keyup keydown input", function() {
 		var height = this.scrollHeight - 16
 		$(this).height(height)
 	})
 })
-
