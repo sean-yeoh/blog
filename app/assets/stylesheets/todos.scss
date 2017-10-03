@@ -27,3 +27,16 @@
 		text-decoration: line-through;	
 	}
 }
+
+.new_todo {
+	#descriptions {
+		resize: none;
+		background-attachment: local;
+  	background-image:
+    linear-gradient(to right, white 10px, transparent 10px),
+    linear-gradient(to left, white 10px, transparent 10px),
+    repeating-linear-gradient(white, white 39px, $medium-gray 39px, $medium-gray 40px, white 40px);
+	  line-height: 40px;
+	  padding: 0.5 * $global-padding;
+	}
+}

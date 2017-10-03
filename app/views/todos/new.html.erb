@@ -1,10 +1,15 @@
 <div class="grid-x align-middle">
   <div class="auto cell">
-    <h2>New Todo</h2>
+    <h2>Add Todos</h2>
   </div>
   <div class="shrink cell ">
     <%= link_to "Back", todos_path, class: "button" %>
   </div>
 </div>
 
-<%= render "form" %>
+<%= simple_form_for @todo do |f| %>
+  <%= text_area_tag :descriptions, nil, rows: 10 %>
+  <%= f.button :submit, "Create To Dos", class: "expanded success" %>
+<% end %>
+
+

@@ -12,12 +12,10 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.new(todo_params)
-    if @todo.save
-      redirect_to todos_path, notice: "To do was successfully created."
-    else
-      render :new
+    params[:descriptions].split("\r\n").each do |description|
+      Todo.create(description: description)
     end
+    redirect_to todos_path, notice: "To dos was successfully created."
   end
 
   def show
@@ -40,14 +38,14 @@ class TodosController < ApplicationController
   end
 
   def done
-    @todo.update(done: true)
+    @todo.update(done: true, done_at: DateTime.now)
     respond_to do |format|
       format.js
     end
   end
 
   def undo
-    @todo.update(done: false)
+    @todo.update(done: false, done_at: nil)
     respond_to do |format|
       format.js
     end
