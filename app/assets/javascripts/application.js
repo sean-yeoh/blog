@@ -24,62 +24,80 @@ $(document).on("turbolinks:load", function() {
 		$(this).height(height)
 	})
 
-  var Font = Quill.import('formats/font');
-	Font.whitelist = ['arial', 'helvetica'];
-	Quill.register(Font, true);
+  if ($("#editor-container")[0]) {
+    var Font = Quill.import('formats/font');
+    Font.whitelist = ['arial', 'helvetica'];
+    Quill.register(Font, true);
 
-  var quill = new Quill('#editor-container', {
-    modules: {
-      toolbar: {
-      	container: '#toolbar',
-      	handlers: {
-      		image: imageHandler
-      	}
-      }
-    },
-  	theme: 'snow'
-  });
+    var editor = new Quill('#editor-container', {
+      modules: {
+        toolbar: {
+        	container: '#toolbar',
+        	handlers: {
+        		image: imageHandler
+        	}
+        }
+      },
+    	theme: 'snow'
+    });
+
+    editor.on("text-change", function() {
+      setContainerHeight()
+    })
+
+    setContainerHeight()
+  }
+
+  function setContainerHeight() {
+    var height = $(".ql-editor")[0].scrollHeight + 20
+    $("#editor-container").height(height)
+  }
 
   $(".post-form").submit(function() {
 		var content = quill.container.firstChild.innerHTML
 		var postContent = $("input[name='post[content]']")
-		console.log(content)
 		postContent.val(content)
 	})
 
+	function imageHandler() {
+		const input = document.createElement('input');
+	  input.setAttribute('type', 'file');
+	  input.setAttribute('accept', 'image/*');
+	  input.click();
+	  input.onchange = () => {
+      const file = input.files[0];
+      // file type is only image.
+      if (/^image\//.test(file.type)) {
+        sendImageToServer(file)
+      } else {
+        console.warn('You could only upload images.');
+      }
+    };
+	}
 
-  	function imageHandler() {
-  	  var range = this.quill.getSelection();
-  	  const editor = this.quill
-  		const input = document.createElement('input');
-  	  input.setAttribute('type', 'file');
-  	  input.setAttribute('accept', 'image/*');
-  	  input.click();
-  	  input.onchange = () => {
-        const file = input.files[0];
+  function sendImageToServer(file) {
+    $(".loading").show()
+    const data = new FormData();
+    data.append('file', file);
 
-        // file type is only image.
-        if (/^image\//.test(file.type)) {
-          $(".loading").show()
-        	const data = new FormData();
-  	      data.append('file', file);
+    $.ajax({
+      url: "/api/images",
+      data: data,
+      cache: false,
+      contentType: false,
+      processData: false,
+      type: "post",
+      dataType: "json",
+      success: function(data, status, jqXHR){
+        insertToEditor(data.url)
+        $(".loading").hide()
+      }
+    })
+  }
 
-          $.ajax({
-          	url: "/api/images",
-          	data: data,
-      			cache: false,
-      			contentType: false,
-      			processData: false,
-          	type: "post",
-        		dataType: "json",
-          	success: function(data, status, jqXHR){
-  	  				editor.insertEmbed(range.index, 'image', data.url, Quill.sources.USER);
-              $(".loading").hide()
-          	}
-          })
-        } else {
-          console.warn('You could only upload images.');
-        }
-       };
-  	}
+  function insertToEditor(url) {
+    var range = editor.getSelection();
+    editor.insertEmbed(range.index, 'image', url, Quill.sources.USER);
+    setContainerHeight()
+  }
 })

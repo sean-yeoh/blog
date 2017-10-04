@@ -26,6 +26,10 @@
   .post_content, input[type=submit] {
     margin-top: $global-margin;
   }
+  #editor-container {
+    height: 300px;
+    background-color: $white;
+  }
 }
 
 .post-title {
