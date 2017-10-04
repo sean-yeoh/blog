@@ -64,15 +64,14 @@ $(document).on("turbolinks:load", function() {
 	  input.setAttribute('type', 'file');
 	  input.setAttribute('accept', 'image/*');
 	  input.click();
-	  input.onchange = () => {
+    input.addEventListener("change", function() {
       const file = input.files[0];
-      // file type is only image.
       if (/^image\//.test(file.type)) {
         sendImageToServer(file)
       } else {
         console.warn('You could only upload images.');
       }
-    };
+    })
 	}
 
   function sendImageToServer(file) {
@@ -96,8 +95,12 @@ $(document).on("turbolinks:load", function() {
   }
 
   function insertToEditor(url) {
+    var index = 0
     var range = editor.getSelection();
-    editor.insertEmbed(range.index, 'image', url, Quill.sources.USER);
+    if (range) {
+      index = range.index
+    }
+    editor.insertEmbed(index, 'image', url, Quill.sources.USER);
     setContainerHeight()
   }
 })
