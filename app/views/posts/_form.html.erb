@@ -45,7 +45,7 @@
 	  <button class="ql-clean" title="Clear"></button>
 	</div>
   <div id="editor-container">
-  	<%= @post.content.html_safe %>
+  	<%= @post&.content&.html_safe %>
 	</div>
   <%= f.button :submit, class: "expanded success" %>
 <% end %>
