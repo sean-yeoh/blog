@@ -1,5 +1,13 @@
 <%= simple_form_for @post, html: { class: "post-form" } do |f| %>
   <%= f.input :title %>
-  <%= f.input :content, as: :ckeditor %>
+  <%= f.input :content, label: "Content", as: :hidden, required: true %>
+  <%= render "quill_toolbar" %>
+  <div id="editor-container">
+  	<%= @post&.content&.html_safe %>
+	</div>
   <%= f.button :submit, class: "expanded success" %>
 <% end %>
+
+<div class="loading" style="display: none;">
+  <%= image_tag "loading.gif" %>
+</div>

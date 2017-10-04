@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     get '/settings' => 'devise/registrations#edit', :as => 'admin_settings'
     put '/settings' => 'devise/registrations#update', :as => 'update_admin_settings'
   end
+  namespace :api do
+    resources :images, only: [:create]
+  end
   resources :posts, path: "/blog"
   resources :todos do
     member do
