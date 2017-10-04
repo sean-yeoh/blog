@@ -54,7 +54,7 @@ $(document).on("turbolinks:load", function() {
   }
 
   $(".post-form").submit(function() {
-		var content = quill.container.firstChild.innerHTML
+		var content = editor.container.firstChild.innerHTML
 		var postContent = $("input[name='post[content]']")
 		postContent.val(content)
 	})
