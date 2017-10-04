@@ -3,4 +3,17 @@
   border: 1px solid $gray;
   margin: $global-margin * 2 0;
   background-color: $white;
+  input {
+  	margin: 0;
+  }
+  label {
+  	margin-top: $global-margin;
+  }
+  input[type=submit] {
+  	margin-top: $global-margin;
+  }
+}
+
+.settings-form {
+	margin-top: 0;
 }
