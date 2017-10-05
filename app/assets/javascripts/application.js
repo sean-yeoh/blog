@@ -40,17 +40,6 @@ $(document).on("turbolinks:load", function() {
       },
     	theme: 'snow'
     });
-
-    editor.on("text-change", function() {
-      setContainerHeight()
-    })
-
-    setContainerHeight()
-  }
-
-  function setContainerHeight() {
-    var height = $(".ql-editor")[0].scrollHeight + 20
-    $("#editor-container").height(height)
   }
 
   $(".post-form").submit(function() {
@@ -101,6 +90,5 @@ $(document).on("turbolinks:load", function() {
       index = range.index
     }
     editor.insertEmbed(index, 'image', url, Quill.sources.USER);
-    setContainerHeight()
   }
 })

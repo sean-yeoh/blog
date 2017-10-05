@@ -26,9 +26,23 @@
   .post_content, input[type=submit] {
     margin-top: $global-margin;
   }
+  /* Tell Quill not to scroll */
   #editor-container {
-    height: 300px;
+    font-size: $global-font-size;
+    font-family: $body-font-family;
     background-color: $white;
+    height: auto;
+    min-height: 300px;
+  }
+  #editor-container .ql-editor {
+    overflow-y: visible; 
+  }
+
+  /* Specify our own scrolling container */
+  #scrolling-container {
+    height: 100%;
+    min-height: 100%;
+    overflow-y: auto;
   }
 }
 
@@ -78,5 +92,11 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+  }
+}
+
+.ql-editor {
+  p {
+    margin-bottom: $global-margin;
   }
 }

@@ -1,10 +1,12 @@
 <%= simple_form_for @post, html: { class: "post-form" } do |f| %>
   <%= f.input :title %>
   <%= f.input :content, label: "Content", as: :hidden, required: true %>
-  <%= render "quill_toolbar" %>
-  <div id="editor-container">
-  	<%= @post&.content&.html_safe %>
-	</div>
+  <div id="scrolling-container">
+  	<%= render "quill_toolbar" %>
+	  <div id="editor-container">
+	  	<%= @post&.content&.html_safe %>
+		</div>
+  </div>
   <%= f.button :submit, class: "expanded success" %>
 <% end %>
 
