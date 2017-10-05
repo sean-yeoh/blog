@@ -1,12 +1,4 @@
 GIT
-  remote: https://github.com/sean-yeoh/ckeditor.git
-  revision: a00795ff97b5d74e5fed31124f207662cec206ba
-  specs:
-    ckeditor (4.2.4)
-      cocaine
-      orm_adapter (~> 0.5.0)
-
-GIT
   remote: https://github.com/sean-yeoh/gemojione.git
   revision: 5b4096f291169129e063d317f27deefbb04af353
   specs:
@@ -78,12 +70,9 @@ GEM
       mime-types (>= 1.16)
     childprocess (0.7.1)
       ffi (~> 1.0, >= 1.0.11)
-    climate_control (0.2.0)
     cloudinary (1.8.1)
       aws_cf_signer
       rest-client
-    cocaine (0.5.8)
-      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -251,7 +240,6 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   carrierwave
-  ckeditor!
   cloudinary
   coffee-rails (~> 4.2)
   devise

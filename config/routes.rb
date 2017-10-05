@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
   devise_for :admins
   as :admin do
     get '/settings' => 'devise/registrations#edit', :as => 'admin_settings'
