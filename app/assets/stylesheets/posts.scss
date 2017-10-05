@@ -7,6 +7,9 @@
   background-color: $white;
   padding: $global-padding;
   border: 1px solid $gray;
+  .post-content {
+    margin: 0;
+  }
 }
 
 .archives {
