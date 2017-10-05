@@ -100,3 +100,17 @@ p {
     margin-bottom: $global-margin;
   }
 }
+
+.post-content.ql-editor {
+  box-sizing: inherit;
+  line-height: inherit;
+  height: inherit;
+  outline: inherit;
+  overflow-y: inherit;
+  padding: 0;
+  tab-size: inherit;
+  -moz-tab-size: inherit;
+  text-align: left;
+  white-space: inherit;
+  word-wrap: break-word;
+}
