@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta property="og:url"           content="https://seanlovesan.herokuapp.com" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Our Blog" />
+    <meta property="og:description"   content="This is my blog!" />
+    <meta property="og:image"         content="https://cdn.pixabay.com/photo/2017/08/30/17/12/waffle-heart-2697904_960_720.jpg" />
     <title><%= content_for?(:title) ? yield(:title) : "Sean & Chui San's Blog" %></title>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
